@@ -12,71 +12,6 @@ function openTab(tabName){
     document.getElementById(tabName).classList.add("active-tab");
 }
 
-// const slideImage = document.querySelectorAll('.slide-image');
-// const slidesContainer = document.querySelectorAll('.slides-container');
-// const nextBtn = document.querySelector(".next-btn");
-// const prevBtn = document.querySelector(".prev-btn");
-
-// function slideBlockContent(){
-
-// }
-
-// let slideWith = slideImage[0].clientWidth;
-
-// function init(){
-//     slideImage.forEach((img, i) => {
-//         img.style.left = i * 100 + "%";
-//     });
-    
-//     slideImage[0].classList.add("active");
-
-// }
-
-// init();
-
-// nextBtn.addEventListener("click", () =>
-// slidesContainer.style.transform = "translateX(-" +
-// slideWith)
-
-// let slideIndex = 0;
-// showSlides(); // call showslide method
- 
-// function showSlides() {
-//     let i;
-
-//     let slides = document.getElementsByClassName("slides");
-
-//     const nextBtn = document.querySelector(".next-btn");
-//     const prevBtn = document.querySelector(".prev-btn");
- 
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
- 
-//     slideIndex++;
- 
-//     // if (slideIndex > slides.length) {
-//     //     slideIndex =s 1;
-//     // }
- 
-//     // for (i = 0; i < dots.length; i++) {
-//     //     dots[i].className = dots[i].className.replace(" active", "");
-//     // }
- 
-//     // slides[slideIndex - 1].style.display = "block";
-//     // dots[slideIndex - 1].className += " active";
- 
-//     setTimeout(showSlides, 2000);
-// }
-
-// let slides = document.getElementsByClassName("slides active-slide");
-// let slideIndex = 0;
-
-// function nextBtn() {
-//     slides[slideIndex].className.remove("active-slide");
-//     slides[slideIndex+1].className.add(" active-slide");
-// }
-
 var slides = document.querySelectorAll('.slides');
 var currentSlide = 0;
 var slideInterval = setInterval(nextSlide,2000);
@@ -111,3 +46,67 @@ function showHide(){
         hideBtn.style.display = "none";
       }
 }
+
+const URL_APP = "https://script.google.com/macros/s/AKfycbz1hJT3x8R5LnJ1oKI0sC9g-XLMSxVNLt4bqNSf3z9aHdYJtpP1ppdlV0ebdqg5Edkn/exec";
+
+// find form in document
+const form = document.querySelector("#form");
+
+// send form address
+form.action = URL_APP;
+
+// extra check fields
+function isFilled(details) {
+    const { name, email, message } = details;
+    if (!name) return false;
+    if (!email) return false;
+    if (!message) return false;
+    return true;
+}
+
+
+form.addEventListener("submit", async (ev) => {
+ev.preventDefault();
+
+const name = document.querySelector("[name=name]");
+const email = document.querySelector("[name=email]");
+const message = document.querySelector("[name=message]");
+
+let details = {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    message: message.value.trim(),
+};
+
+if (!isFilled(details)) return;
+
+let formBody = [];
+for (let property in details) {
+    let encodedKey = encodeURIComponent(property);
+    let encodedValue = encodeURIComponent(details[property]);
+    formBody.push(encodedKey + "=" + encodedValue);
+}
+formBody = formBody.join("&");
+
+const result = await fetch(URL_APP, {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    },
+    mode: "cors", 
+    body: formBody,
+})
+    .then((res) => res.json())
+    .catch((err) => alert("Error!"))
+    
+    if( result.type === 'success' ) {
+    name.value = '';
+    email.value = '';
+    message.value = '';
+    alert('Thank you for your offer! I will contact you shortly.')
+    }
+    if( result.type === 'error' ) {            
+    alert(`Error( ${result.errors}`)
+    }
+});
+

@@ -383,3 +383,8 @@ form .btn{
     margin-top: 20px;
     cursor: pointer;
 }
+#msg{
+    color: #FC8BC8;
+    margin-top: 20px;
+    display: block;
+}
