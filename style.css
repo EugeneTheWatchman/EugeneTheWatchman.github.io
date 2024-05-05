@@ -16,7 +16,7 @@ body{
     width: 140px;
 }
 .container{
-    padding: 10px 10%;
+    padding: 10px 6%;
 }
 nav{
     display: flex;
@@ -161,6 +161,7 @@ nav ul li a:hover::after{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 5% 0;
 }
 .more-button{
     width: 40px;
@@ -233,7 +234,7 @@ nav ul li a:hover::after{
     margin-bottom: 16px;
 }
 #get-in-touch h1{
-    font-size: 60px;
+    font-size: 54px;
     line-height: 60px;
     font-weight: 500;
     margin-bottom: 16px;
@@ -387,4 +388,200 @@ form .btn{
     color: #FC8BC8;
     margin-top: 20px;
     display: block;
+}
+
+
+/*-----------------Responsive Design----------------------*/
+@media (max-width: 960px) {
+    nav ul li{
+        margin: 6px 12px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    #about-me {
+        padding: 50px 0;
+    }
+    .about-me-col-1 {
+        display: none;
+    }
+    .about-me-col-2 {
+        flex-basis: 100%;
+    }
+    #core-values {
+        padding: 50px 0;
+    }
+    #get-in-touch {
+        padding: 40px 0;
+        margin-right: 0;
+    }
+    #get-in-touch h1 {
+        font-size: 40px;
+    }
+    #get-in-touch h1 span {
+        font-size: 40px;
+    }
+    #get-in-touch.contact h1 {
+        font-size: 40px;
+    }
+    #get-in-touch.contact h1 span {
+        font-size: 40px;
+    }
+    .contact-right {
+        margin: 0;
+    }
+    .row.contact {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        justify-content: flex-start;
+    }
+}
+@media (max-width: 720px) {
+    nav ul li{
+        margin: 4px 8px;
+    }
+    nav ul li a{
+        font-size: 14px;
+    }
+    .logo {
+        width: 90px;
+    }
+    .btn {
+        padding: 12px 20px;
+    }
+    .header-text {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .prev-btn {
+        margin-top: 50%;
+    }
+    .next-btn {
+        margin-top: 50%;
+    }
+    #more-about-me {
+        margin-top: 40px;
+    }
+    .grid-2-columns {
+        grid-template-columns: none;
+    }
+    #get-in-touch h1 {
+        font-size: 30px;
+    }
+    #get-in-touch h1 span {
+        font-size: 30px;
+    }
+    #get-in-touch h1 {
+        line-height: 30px;
+    }
+    #get-in-touch h1 {
+        font-size: 28px;
+    }
+    .contact-links ul li a {
+        font-size: 20px;
+    }
+    .contact-links ul li {
+        margin: 20px 10px;
+    }
+    #get-in-touch.contact h1 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 480px) {
+    nav ul li{
+        margin: 2px 4px;
+    }
+    nav ul li a{
+        font-size: 12px;
+    }
+    .logo {
+        width: 60px;
+    }
+    .btn {
+        padding: 10px 14px;
+    }
+    .header-text {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .prev-btn {
+        margin-top: 100%;
+    }
+    .next-btn {
+        margin-top: 100%;
+    }
+    #more-about-me {
+        margin-top: 20px;
+    }
+    .more-about-me-row p {
+        margin: 10%;
+    }
+    #core-values {
+        padding: 0;
+    }
+    #core-values h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .grid-2-columns.core-values-about-v2 {
+        margin-top: 32px;
+    }
+    .core-value-card-v2 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #core-values img {
+        max-width: 40%;
+    }
+    #get-in-touch h1 {
+        font-size: 20px;
+    }
+    #get-in-touch h1 span {
+        font-size: 20px;
+    }
+    #get-in-touch h1 {
+        line-height: 20px;
+    }
+    #get-in-touch h1 {
+        font-size: 20px;
+    }
+    .contact-links ul li a {
+        font-size: 16px !important;
+    }
+    .contact-links ul li {
+        margin: 10px 5px;
+    }
+    #get-in-touch header {
+        font-size: 24px;
+    }
+    #copyright {
+        font-size: 12px;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .title-about-me {
+        font-size: 30px;
+    }
+    #get-in-touch span {
+        font-size: 16px;
+    }
+    #get-in-touch.contact h1 {
+        font-size: 20px;
+    }
+    #get-in-touch.contact header {
+        margin: 0;
+    }
+    #get-in-touch.contact h1 span {
+        font-size: 20px;
+    }
+    form .btn {
+        width: 100%;
+    }
+
 }
