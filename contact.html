@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xenia Kokovina</title>
+    <title>Контакты</title>
+    <link type="Image/x-icon" href="images/website.gif" rel="icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://kit.fontawesome.com/602646fa58.js" crossorigin="anonymous"></script>
@@ -13,11 +14,13 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" class="logo">
+                <a href="/">
+                    <img src="images/logo.gif" class="logo">
+                </a>
                 <ul>
-                    <li><a href="index.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="images/CV_Xenia_Kokovina.pdf" download class="btn">Download CV</a></li>
+                    <li><a class="btn small " href="index.html">Главная</a></li>
+                    <li><a class="btn small" href="aboutme.html">Обо мне</a></li>
+                    <li><a class="btn small thispage" href="contact.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,59 +30,25 @@
         <div class="container">
             <div class="row contact">
                 <div class="contact-left">
-                    <header>Get in touch today</header>
-                    <h1>kseniya.kokovina@mail.ru <span class="material-symbols-outlined">north_east</span></h1>
-                    <p>I would like to extend the invitation to reach out to me using the communication method that best 
-                        suits your preferences and convenience. Whether you prefer to connect via email, phone, or any other means, 
-                        I want to ensure that our communication is as comfortable and accommodating for you as possible. 
-                        Please don't hesitate to choose the method that works best for you, and I'll be readily available to assist you.
+                    <header>Контакты для связи</header>
+                    <a href="mailto:deus.lo.vult@mail.ru" class="">deus.lo.vult@mail.ru</a>
+                    <p>Я приглашаю вас связаться со мной любым удобным для вас способом.
+                        Независимо от того, предпочитаете ли вы общаться по электронной почте, телефону или другим способом,
+                        я хочу, чтобы наше общение было максимально комфортным для вас.
+                        Пожалуйста, не стесняйтесь выбрать способ, который вам наиболее удобен, и я буду готов ответить вам.
                     </p>
-                    <div class="contact-links">
-                        <ul>
-                            <li><a href="https://vk.com/xeniakokovina">VK <span class="material-symbols-outlined">north_east</span></a></li>
-                            <li><a href="https://github.com/xeniakokovina">GitHub <span class="material-symbols-outlined">north_east</span></a></li>
-                            <li><a href="https://t.me/xeniakokovina">Telegram <span class="material-symbols-outlined">north_east</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Fullname" required>
-                        <input type="email" name="Email" placeholder="Email address" required>
-                        <textarea name="Message" rows="6" placeholder="Tell me about the project"></textarea>
-                        <button type="submit" class="btn btn-submit"> Submit Message</button>
-                    </form>
-                    <span id="msg"></span>
+
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="copyright">
-        <p>Copyright © Xenia Kokovina. Made with <i class="fa-solid fa-heart"></i> by Xenia Kokovina</p>
-    </div>
-
-
-
-
-    <script>
-        const scriptURL = '<https://script.google.com/macros/s/AKfycbzUEVRyccwxUgSC456_8pfU_gUKINU5ClEBBgfrIFe4X9na9EKECA3XTQPyR1LGTCf6/exec>'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully!"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                }, 5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-    
+    <footer>
+        <div class="social-links">
+            <a href="https://t.me/ProgrammerProfile" class="fab fa-telegram"></a>
+            <a href="http://centradm.ru/uchrezhdeniya-i-predpriyatiya/voennyy-komissariat/" onclick="alert('Данные о том, что вы пользуетесь запрещенной\nсетью отправленны в близжайший военкомат')" class="fab fa-instagram"></a>
+            <a href="https://vk.com/ev248163264" class="fab fa-vk"></a>
+            <a href="https://github.com/EugeneTheWatchman" class="fab fa-github"></a>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <link type="Image/x-icon" href="images/website.gif" rel="icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://kit.fontawesome.com/602646fa58.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a href="/">
+                    <img src="images/logo.gif" class="logo">
+                </a>
+                <ul>
+                    <li><a class="btn small" href="index.html">Главная</a></li>
+                    <li><a class="btn small thispage" href="aboutme.html">Обо мне</a></li>
+                    <li><a class="btn small" href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-container">
+                <div class="header-container">
+                    <div class="header-text">
+                        <p>Меня зовут <span>Евгений</span>,<br>я - <span>Казахский шпион</span>,<br>выполняю миссию в России</p>
+                    </div>
+                    <img src="images/main-photo.jpg" class="header-photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-me">
+        <div class="container">
+            <div class="row">
+                <div class="about-me-col-1">
+                    <div class="image-container">
+                        <img src="images/photo-in-forest.jpg">
+                    </div>
+                </div>
+                <div class="about-me-col-2">
+                    <h1 class="sub-title">Обо мне</h1>
+                    <p>Мне 23 года.
+                        Я добрый, открытый, радостный человек.
+                        Я люблю учиться, ищу новые знания и опыт.
+
+                        В данный момент я учусь в магистратуре на специальности <span>прикладная информатика</span>, на кафедре экономики.
+                        Мои любимые предметы - это <span>математика</span> и <span>статистика</span>.
+                        Мне нравится изучать новые <span>языки программирования</span> на практике, решая различные задачи.
+                        Я готов развиваться в этой области и с нетерпением жду новых шагов вперед.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Навыки</p>
+                        <p class="tab-links" onclick="openTab('experience')">Опыт</p>
+                        <p class="tab-links" onclick="openTab('education')">Образование</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Языки программирования</span><br>Python, SQL, Java, C++/C#, JavaScript </li>
+                            <li><span>Протоколы и прочее</span><br>REST/SOAP/XML-RPC, Modbus, JSON/XML, HTML/CSS, Git </li>
+                            <li><span>Системы</span><br>Windows, Linux</li>
+                            <li><span>Языки</span><br>Русский, Английский</li>
+                            <li><span>Личные качества</span><br>Пунктуальность, Вежливость, Ответственность, Самостоятельность </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>АО Газпромбанк</span><br>12/23 - по настоящее время</li>
+                            <li><span>АО Газпромбанк</span><br>08/22 - 12/23</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>ЮУрГУ Бакалавриат</span><br>2018 - 2022<br>Инфокоммуникационные технологии и системы связи</li>
+                            <li><span>ЮУрГУ Магистратура</span><br>2022 - 2024<br>Прикладная информатика</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
